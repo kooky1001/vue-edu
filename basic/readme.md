@@ -5,3 +5,4 @@
 3. index
 4. instance
 5. component
+6. props
