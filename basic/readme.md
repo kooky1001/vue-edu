@@ -1,4 +1,7 @@
-1.web-dev.html
-2.vue-way
-3.index
-4.instance
+# 강의순서
+
+1. web-dev
+2. vue-way
+3. index
+4. instance
+5. component
