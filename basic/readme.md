@@ -7,3 +7,4 @@
 5. component
 6. props
 7. event-emit
+8. component-same-level
