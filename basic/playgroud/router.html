@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li>
+            <router-link to="/login">login</router-link>
+        </li>
+        <li>
+            <router-link to="/main">main</router-link>
+        </li>
+    </ul>
+    <router-view></router-view>
+</div>
+
+<!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+<!--<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>-->
+<script src="https://unpkg.com/vue@2"></script>
+<script src="https://unpkg.com/vue-router@3"></script>
+<script>
+    const loginComponent = {
+        template: '<div>로그인페이지</div>',
+        name: 'loginComponent',
+    }
+    const mainComponent = {
+        template: '<div>메인페이지</div>',
+        name: 'mainComponent',
+    }
+
+    const router = new VueRouter({
+        // mode: 'history',
+        routes: [
+            { path: '/login', component: loginComponent },
+            { path: '/main', component: mainComponent },
+        ]
+    });
+
+    new Vue({
+        el: '#app',
+        router: router,
+    });
+</script>
+</body>
+</html>

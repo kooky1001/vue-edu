@@ -8,3 +8,4 @@
 6. props
 7. event-emit
 8. component-same-level
+9. router
