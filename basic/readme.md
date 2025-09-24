@@ -9,3 +9,4 @@
 7. event-emit
 8. component-same-level
 9. router
+10. axios
