@@ -6,3 +6,4 @@
 4. instance
 5. component
 6. props
+7. event-emit
