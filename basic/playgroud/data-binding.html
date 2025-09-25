@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .text-blue {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <p>{{str}}</p>
+    <p v-bind:id="uuid" v-bind:class="name">{{num}}</p>
+    <p>{{doubleNum}}</p>
+    <div>
+        <input type="text" v-model="message">
+        <p>{{message}}</p>
+    </div>
+    <p v-if="loading">
+        로그인중...
+    </p>
+    <p v-else>
+        로그인 완료
+    </p>
+    <p v-show="loading">
+        로그인중...
+    </p>
+</div>
+
+<script src="https://unpkg.com/vue@2"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            str: 'Hello World',
+            num: 10,
+            uuid: 'abc1234',
+            name: 'text-blue',
+            message: '',
+            loading: true
+        },
+        computed: {
+            doubleNum: function() {
+                return this.num * 2;
+            }
+        }
+    });
+</script>
+</body>
+</html>
