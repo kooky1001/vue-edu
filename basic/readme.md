@@ -11,3 +11,4 @@
 9. router
 10. axios
 11. data-binding
+12. methods
