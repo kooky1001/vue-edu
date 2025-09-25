@@ -14,3 +14,4 @@
 12. methods
 13. watch
 14. computed-vs-watch
+15. computed-usage
