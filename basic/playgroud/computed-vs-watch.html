@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <p>{{num}}</p>
+    <p>{{doubleNum}}</p>
+</div>
+
+<script src="https://unpkg.com/vue@2"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            num: 10
+        },
+        computed: {
+            doubleNum: function() {
+                return this.num*2;
+            }
+        },
+        methods: {
+            fetchUsersByNumber(value) {
+                console.log(value);
+                // axios.get(value);
+            }
+        },
+        watch: {
+            num: function(newValue, oldValue) {
+                this.fetchUsersByNumber(newValue);
+            }
+        }
+    });
+</script>
+</body>
+</html>
