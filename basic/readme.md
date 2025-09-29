@@ -1,5 +1,6 @@
 # 강의순서
-
+***
+* ## basic
 1. web-dev
 2. vue-way
 3. index
@@ -18,4 +19,6 @@
 16. vue-cli
     * npm install @vue/cli
     * vue create vue-cli
-    * vue-cli 기본구조 파악 및 props, event-emit 적용 (AppHeader.vue)
+    * vue-cli 기본구조 파악 및 props, event-emit 적용 (AppHeader.vue) -> 싱글파일컴포넌트
+17. vue-form (기본로그인 submit)
+***
