@@ -16,5 +16,6 @@
 14. computed-vs-watch
 15. computed-usage
 16. vue-cli
-##### npm install @vue/cli
-vue create vue-cli
+    * npm install @vue/cli
+    * vue create vue-cli
+    * vue-cli 기본구조 파악 및 props, event-emit 적용 (AppHeader.vue)
