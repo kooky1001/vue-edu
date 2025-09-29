@@ -1,6 +1,5 @@
 .DS_Store
-basic/node_modules
-intermediate/node_modules
+node_modules
 /dist
 
 
