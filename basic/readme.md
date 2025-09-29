@@ -15,3 +15,6 @@
 13. watch
 14. computed-vs-watch
 15. computed-usage
+16. vue-cli
+##### npm install @vue/cli
+vue create vue-cli
