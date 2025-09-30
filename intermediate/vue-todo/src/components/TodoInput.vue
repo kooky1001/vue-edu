@@ -15,8 +15,7 @@ export default {
   },
   methods: {
     addTodoItem: function() {
-      const data = {completed: false, item: this.newTodoItem};
-      localStorage.setItem(this.newTodoItem, JSON.stringify(data));
+      this.$emit('addItem', this.newTodoItem);
       this.clearTodoItem();
     },
     clearTodoItem: function() {
