@@ -2,7 +2,7 @@
   <div id="app">
     <TodoHeader/>
     <TodoInput/>
-    <TodoList/>
+    <TodoList v-bind:propsdata="todoItems" v-on:removeItem="removeOneItem" v-on:completeItem="completeOneItem"/>
     <TodoFooter/>
   </div>
 </template>
@@ -20,6 +20,30 @@ export default {
     TodoInput,
     TodoList,
     TodoFooter,
+  },
+  data: function() {
+    return {
+      todoItems: [],
+    }
+  },
+  created: function() {
+    if (localStorage.length > 0) {
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        this.todoItems.push(JSON.parse(localStorage.getItem(key)));
+      }
+    }
+  },
+  methods: {
+    removeOneItem: function(todoItem, index) {
+      localStorage.removeItem(todoItem.item);
+      this.todoItems.splice(index, 1);
+    },
+    completeOneItem: function(todoItem) {
+      todoItem.completed = !todoItem.completed;
+      // localStorage.removeItem(todoItem.item);
+      localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
+    }
   }
 }
 </script>

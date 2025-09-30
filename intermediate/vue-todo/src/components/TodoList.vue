@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li v-for="(todoItem, index) in todoItems" v-bind:key="todoItem">
+      <li v-for="(todoItem, index) in propsdata" v-bind:key="todoItem.item">
         <input type="checkbox" v-bind:checked="todoItem.completed" v-on:click="completeTodoItem(todoItem)"/>
         <span v-bind:class="{textCompleted: todoItem.completed}">{{todoItem.item}}</span>
         <button v-on:click="removeTodoItem(todoItem, index)">-</button>
@@ -13,28 +13,13 @@
 <script>
 export default {
   name: "TodoList",
-  data: function() {
-    return {
-      todoItems: [],
-    }
-  },
-  created: function() {
-    if (localStorage.length > 0) {
-      for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        this.todoItems.push(JSON.parse(localStorage.getItem(key)));
-      }
-    }
-  },
+  props: ['propsdata'],
   methods: {
     removeTodoItem: function(todoItem, index) {
-      localStorage.removeItem(todoItem.item);
-      this.todoItems.splice(index, 1);
+      this.$emit('removeItem', todoItem, index);
     },
     completeTodoItem: function(todoItem) {
-      todoItem.completed = !todoItem.completed;
-      // localStorage.removeItem(todoItem.item);
-      localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
+      this.$emit('completeItem', todoItem);
     }
   }
 }
