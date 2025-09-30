@@ -7,4 +7,5 @@
       * TodoInput
       * TodoList
       * TodoFooter
+    * localStorage 활용
 ***
