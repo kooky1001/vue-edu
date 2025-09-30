@@ -1,12 +1,17 @@
 <template>
-  <footer>
-    <p>TodoFooter</p>
-  </footer>
+  <div>
+    <button v-on:click="clearAllTodoItems">clear all</button>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "TodoFooter"
+  name: "TodoFooter",
+  methods: {
+    clearAllTodoItems: function() {
+      localStorage.clear();
+    }
+  }
 }
 </script>
 
