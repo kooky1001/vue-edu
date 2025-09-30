@@ -1,12 +1,27 @@
 <template>
   <div>
-    <p>TodoInput</p>
+    <input type="text" v-model="newTodoItem" v-on:keyup.enter="addTodoItem"/>
+    <button v-on:click="addTodoItem">+</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: "TodoInput"
+  name: "TodoInput",
+  data: function() {
+    return {
+      newTodoItem: "",
+    }
+  },
+  methods: {
+    addTodoItem: function() {
+      localStorage.setItem(this.newTodoItem, this.newTodoItem);
+      this.clearTodoItem();
+    },
+    clearTodoItem: function() {
+      this.newTodoItem = "";
+    }
+  }
 }
 </script>
 
