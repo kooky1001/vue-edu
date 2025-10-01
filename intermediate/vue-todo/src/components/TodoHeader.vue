@@ -1,7 +1,9 @@
 <template>
-  <header>
-    <h2>Todo it!</h2>
-  </header>
+  <div class="text-center">
+    <h2 class="mb-5">
+      Todo it!
+    </h2>
+  </div>
 </template>
 
 <script>
@@ -11,5 +13,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

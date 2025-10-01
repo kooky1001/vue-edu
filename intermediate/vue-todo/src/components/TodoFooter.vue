@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <button v-on:click="clearAllTodoItems">clear all</button>
+  <div class="text-center ma-5">
+    <v-btn class="white--text" large color="teal" v-on:click="clearAllTodoItems">
+      Clear All
+      <v-icon>mdi-history</v-icon>
+    </v-btn>
   </div>
 </template>
 
