@@ -30,11 +30,11 @@ export default {
   props: ['propsdata'],
   methods: {
     removeTodoItem(todoItem, index) {
-      this.$emit('removeItem', todoItem, index);
+      this.$store.commit('removeOneItem', {todoItem, index});
     },
     completeTodoItem(todoItem) {
-      this.$emit('completeItem', todoItem);
-    }
+      this.$store.commit('completeOneItem', todoItem);
+    },
   }
 }
 </script>

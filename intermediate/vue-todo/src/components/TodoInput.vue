@@ -31,7 +31,9 @@ import CommonModal from "@/components/common/CommonModal.vue";
 
 export default {
   name: "TodoInput",
-  components: {CommonModal},
+  components: {
+    CommonModal
+  },
   data() {
     return {
       newTodoItem: "",
@@ -41,7 +43,7 @@ export default {
   methods: {
     addTodoItem() {
       if (this.newTodoItem !== '') {
-        this.$emit('addItem', this.newTodoItem);
+        this.$store.commit('addOneItem', this.newTodoItem);
         this.clearTodoItem();
       } else {
         this.showModal = !this.showModal;

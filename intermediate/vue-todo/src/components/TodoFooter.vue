@@ -12,7 +12,7 @@ export default {
   name: "TodoFooter",
   methods: {
     clearAllTodoItems() {
-      this.$emit('clearAll');
+      this.$store.commit('clearAllItems');
     }
   }
 }
