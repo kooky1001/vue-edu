@@ -6,13 +6,13 @@
           <v-list-item v-for="(todoItem, index) in storedTodoItems" v-bind:key="todoItem.item" v-bind:class="{textCompletedLine: todoItem.completed}">
             <v-row>
               <v-col cols="1">
-                <v-checkbox v-bind:input-value="todoItem.completed" v-on:click="completeTodoItem(todoItem, index)"/>
+                <v-checkbox v-bind:input-value="todoItem.completed" v-on:click="completeTodoItem({todoItem, index})"/>
               </v-col>
               <v-col cols="10" class="text-center my-5">
                 <v-input v-bind:class="{textCompleted: todoItem.completed}">{{todoItem.item}}</v-input>
               </v-col>
               <v-col cols="1">
-                <v-btn class="ml-3" large color="warning" width="80%" v-on:click="removeTodoItem(todoItem, index)">
+                <v-btn class="ml-3" large color="warning" width="80%" v-on:click="removeTodoItem({todoItem, index})">
                   <v-icon large>mdi-trash-can-outline</v-icon>
                 </v-btn>
               </v-col>
@@ -25,17 +25,15 @@
 </template>
 
 <script>
-import {mapGetters} from "vuex";
+import {mapGetters, mapMutations} from "vuex";
 
 export default {
   name: "TodoList",
   methods: {
-    removeTodoItem(todoItem, index) {
-      this.$store.commit('removeOneItem', {todoItem, index});
-    },
-    completeTodoItem(todoItem, index) {
-      this.$store.commit('completeOneItem', {todoItem, index});
-    },
+    ...mapMutations({
+      removeTodoItem: 'removeOneItem',
+      completeTodoItem: 'completeOneItem',
+    }),
   },
   computed: {
     ...mapGetters(['storedTodoItems']),

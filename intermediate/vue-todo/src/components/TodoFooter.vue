@@ -8,12 +8,14 @@
 </template>
 
 <script>
+import {mapMutations} from "vuex";
+
 export default {
   name: "TodoFooter",
   methods: {
-    clearAllTodoItems() {
-      this.$store.commit('clearAllItems');
-    }
+    ...mapMutations({
+      clearAllTodoItems: 'clearAllItems'
+    }),
   }
 }
 </script>
