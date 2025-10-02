@@ -23,4 +23,7 @@
    * getters
    * mutations(동기)
    * actions(비동기)
+6. Vuex 헬퍼함수 적용
+   * mapGetters
+   * mapMutations
 ***

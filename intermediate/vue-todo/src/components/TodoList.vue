@@ -3,7 +3,7 @@
     <v-list>
         <v-list-item-group>
       <transition-group name="list" tag="p">
-          <v-list-item v-for="(todoItem, index) in this.$store.state.todoItems" v-bind:key="todoItem.item" v-bind:class="{textCompletedLine: todoItem.completed}">
+          <v-list-item v-for="(todoItem, index) in storedTodoItems" v-bind:key="todoItem.item" v-bind:class="{textCompletedLine: todoItem.completed}">
             <v-row>
               <v-col cols="1">
                 <v-checkbox v-bind:input-value="todoItem.completed" v-on:click="completeTodoItem(todoItem, index)"/>
@@ -25,9 +25,10 @@
 </template>
 
 <script>
+import {mapGetters} from "vuex";
+
 export default {
   name: "TodoList",
-  props: ['propsdata'],
   methods: {
     removeTodoItem(todoItem, index) {
       this.$store.commit('removeOneItem', {todoItem, index});
@@ -35,6 +36,9 @@ export default {
     completeTodoItem(todoItem, index) {
       this.$store.commit('completeOneItem', {todoItem, index});
     },
+  },
+  computed: {
+    ...mapGetters(['storedTodoItems']),
   }
 }
 </script>
