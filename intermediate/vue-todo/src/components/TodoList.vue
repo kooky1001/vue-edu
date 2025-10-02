@@ -6,7 +6,7 @@
           <v-list-item v-for="(todoItem, index) in this.$store.state.todoItems" v-bind:key="todoItem.item" v-bind:class="{textCompletedLine: todoItem.completed}">
             <v-row>
               <v-col cols="1">
-                <v-checkbox v-bind:input-value="todoItem.completed" v-on:click="completeTodoItem(todoItem)"/>
+                <v-checkbox v-bind:input-value="todoItem.completed" v-on:click="completeTodoItem(todoItem, index)"/>
               </v-col>
               <v-col cols="10" class="text-center my-5">
                 <v-input v-bind:class="{textCompleted: todoItem.completed}">{{todoItem.item}}</v-input>
@@ -32,8 +32,8 @@ export default {
     removeTodoItem(todoItem, index) {
       this.$store.commit('removeOneItem', {todoItem, index});
     },
-    completeTodoItem(todoItem) {
-      this.$store.commit('completeOneItem', todoItem);
+    completeTodoItem(todoItem, index) {
+      this.$store.commit('completeOneItem', {todoItem, index});
     },
   }
 }

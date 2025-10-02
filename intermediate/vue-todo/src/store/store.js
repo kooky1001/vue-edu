@@ -32,13 +32,22 @@ export const store =  new Vuex.Store({
             localStorage.removeItem(payload.todoItem.item);
             store.todoItems.splice(payload.index, 1);
         },
-        completeOneItem(store, todoItem) {
-            todoItem.completed = !todoItem.completed;
-            localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
+        completeOneItem(store, payload) {
+            store.todoItems[payload.index].completed = !store.todoItems[payload.index].completed; // 안티패턴 제거
+            localStorage.setItem(payload.todoItem.item, JSON.stringify(payload.todoItem));
         },
         clearAllItems(store) {
             localStorage.clear();
             store.todoItems = [];
+        },
+        showHeader(store) {
+            const header = store.headerText;
+            alert(header);
+        }
+    },
+    actions: {
+        showHeaderText(context) {
+            setTimeout(() => context.commit('showHeader'), 500);
         }
     }
 })
