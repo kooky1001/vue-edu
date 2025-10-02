@@ -26,4 +26,6 @@
 6. Vuex 헬퍼함수 적용
    * mapGetters
    * mapMutations
+7. 모듈화
+   * mutations 분리
 ***
