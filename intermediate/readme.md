@@ -1,7 +1,7 @@
 # 강의순서
 ***
 * ## intermediate
-1. 프로젝트 구현
+1. 프로젝트 구현 (vue-cli 2.xx)
     * 컴포넌트 구조
       * TodoHeader
       * TodoInput
@@ -18,4 +18,9 @@
    * 트렌지션 적용
 4. ES6 적용
    * 속성명 축약
+5. Vuex 적용 (vuex 3.xx)
+   * state
+   * getters
+   * mutations(동기)
+   * actions(비동기)
 ***

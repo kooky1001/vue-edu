@@ -3,7 +3,7 @@
     <v-list>
         <v-list-item-group>
       <transition-group name="list" tag="p">
-          <v-list-item v-for="(todoItem, index) in propsdata" v-bind:key="todoItem.item" v-bind:class="{textCompletedLine: todoItem.completed}">
+          <v-list-item v-for="(todoItem, index) in this.$store.state.todoItems" v-bind:key="todoItem.item" v-bind:class="{textCompletedLine: todoItem.completed}">
             <v-row>
               <v-col cols="1">
                 <v-checkbox v-bind:input-value="todoItem.completed" v-on:click="completeTodoItem(todoItem)"/>
