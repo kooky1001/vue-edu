@@ -29,10 +29,10 @@ export default {
   name: "TodoList",
   props: ['propsdata'],
   methods: {
-    removeTodoItem: function(todoItem, index) {
+    removeTodoItem(todoItem, index) {
       this.$emit('removeItem', todoItem, index);
     },
-    completeTodoItem: function(todoItem) {
+    completeTodoItem(todoItem) {
       this.$emit('completeItem', todoItem);
     }
   }
