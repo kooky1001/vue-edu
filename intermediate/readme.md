@@ -28,4 +28,5 @@
    * mapMutations
 7. 모듈화
    * mutations 분리
+   * TodoStore 분리
 ***

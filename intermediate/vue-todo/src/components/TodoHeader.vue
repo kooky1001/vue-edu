@@ -1,7 +1,7 @@
 <template>
   <div class="text-center">
     <h2 class="mb-5" v-on:click="showHeader">
-      {{this.$store.state.headerText}}
+      {{this.$store.state.todo.headerText}}
     </h2>
   </div>
 </template>
@@ -13,7 +13,7 @@ export default {
     showHeader () {
       this.$store.dispatch("showHeaderText");
     }
-  }
+  },
 }
 </script>
 

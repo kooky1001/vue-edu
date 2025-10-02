@@ -19,9 +19,4 @@ const clearAllItems = (store) => {
     store.todoItems = [];
 }
 
-// const showHeader = (store) => {
-//     const header = store.headerText;
-//     alert(header);
-// }
-
 export {addOneItem, removeOneItem, completeOneItem, clearAllItems}
